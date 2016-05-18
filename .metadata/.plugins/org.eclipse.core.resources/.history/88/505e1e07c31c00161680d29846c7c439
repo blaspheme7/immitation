@@ -1,0 +1,7 @@
+package spms.controls;
+
+
+@Component("/project/list.do")
+public class ProjectListController {
+
+}

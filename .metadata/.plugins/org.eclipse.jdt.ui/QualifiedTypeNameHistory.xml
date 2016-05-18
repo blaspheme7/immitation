@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="org.apache.tomcat.jdbc.pool.DataSource"/>
 <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
-<fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Driver"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
@@ -20,15 +19,12 @@
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="dao.MemberDao"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="vo.Member"/>
 <fullyQualifiedTypeName name="controller.MemberDeleteController"/>
 <fullyQualifiedTypeName name="controller.MemberUpdateController"/>
 <fullyQualifiedTypeName name="spms.controls.MemberListController"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="spms.bind.ServletRequestDataBinder"/>
 <fullyQualifiedTypeName name="spms.vo.Member"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
@@ -38,4 +34,11 @@
 <fullyQualifiedTypeName name="spms.listeners.ContextLoaderListener"/>
 <fullyQualifiedTypeName name="spms.context.ApplicationContext"/>
 <fullyQualifiedTypeName name="spms.controls.Controller"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="spms.annotation.Component"/>
+<fullyQualifiedTypeName name="java.lang.annotation.RetentionPolicy"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
 </qualifiedTypeNameHistroy>
