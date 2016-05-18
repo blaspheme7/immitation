@@ -1,0 +1,5 @@
+package spms.context;
+
+public class ApplicationContext {
+
+}

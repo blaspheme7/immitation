@@ -1,0 +1,6 @@
+127.0.0.1 - - [07/Apr/2016:14:29:58 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [07/Apr/2016:14:29:59 +0900] "GET /JavaWeb/member/login HTTP/1.1" 200 490
+0:0:0:0:0:0:0:1 - - [07/Apr/2016:14:30:01 +0900] "POST /JavaWeb/member/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [07/Apr/2016:14:30:01 +0900] "GET /JavaWeb/member/list HTTP/1.1" 200 856
+0:0:0:0:0:0:0:1 - - [07/Apr/2016:14:30:07 +0900] "POST /JavaWeb/member/login HTTP/1.1" 200 476
+0:0:0:0:0:0:0:1 - - [07/Apr/2016:14:30:08 +0900] "GET /JavaWeb/member/login HTTP/1.1" 200 490
