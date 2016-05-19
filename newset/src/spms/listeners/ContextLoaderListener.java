@@ -28,6 +28,7 @@ public class ContextLoaderListener implements ServletContextListener {
 			
 			String propertiesPath=sc.getRealPath(sc.getInitParameter("contextConfigLocation"));
 			applicationContext=new ApplicationContext(propertiesPath);
+			System.out.println("applicationContext="+applicationContext);
       
 			/*
 			InitialContext initialContext = new InitialContext();

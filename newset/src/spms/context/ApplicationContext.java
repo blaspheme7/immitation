@@ -42,6 +42,7 @@ public class ApplicationContext {
 			
 			key=(String)item;
 			value=props.getProperty(key);
+			System.out.println("value="+value);
 			if(key.startsWith("jndi.")) objTable.put(key, ctx.lookup(value));
 			else objTable.put(key, Class.forName(value).newInstance());
 		}

@@ -2,8 +2,10 @@ package spms.controls;
 
 import java.util.Map;
 
+import spms.annotation.Component;
 import spms.dao.MySqlMemberDao;
 
+@Component("/member/list2.do")
 public class MemberListDescController implements Controller {
 	MySqlMemberDao memberDao;
 	
@@ -15,7 +17,7 @@ public class MemberListDescController implements Controller {
 	@Override
 	public String execute(Map<String, Object> model) throws Exception {
 	  
-	System.out.println("MemberListController_execute");
+	System.out.println("MemberListDescController_execute");
     
     // 회원 목록 데이터를 Map 객체에 저장한다.
     model.put("members", memberDao.selectListDesc());

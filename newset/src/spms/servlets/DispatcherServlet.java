@@ -27,7 +27,7 @@ public class DispatcherServlet extends HttpServlet {
 		try {
 			//ServletContext sc = this.getServletContext();
 			ApplicationContext ctx=ContextLoaderListener.getApplicationContext();
-	  
+			System.out.println("ctx="+ctx);
 			RequestDispatcher rd=request.getRequestDispatcher("/Header.jsp");
 			rd.include(request, response);
 	  
@@ -36,7 +36,7 @@ public class DispatcherServlet extends HttpServlet {
 	  //model.put("memberDao", sc.getAttribute("memberDao"));
 			model.put("session", request.getSession());
 	  
-			System.out.println(servletPath);
+			System.out.println("servletPath="+servletPath);
 			//Controller pageController = (Controller)sc.getAttribute(servletPath);
 			Controller pageController=(Controller)ctx.getBean(servletPath);
 			if(pageController==null) throw new Exception("요청한 서비스를 찾을 수 없습니다.");
@@ -45,7 +45,7 @@ public class DispatcherServlet extends HttpServlet {
 		  
 				prepareRequestData(request, model, (DataBinding)pageController);
 			}
-	  
+			System.out.println("prepareRequestData, model="+model);
 			String viewUrl = pageController.execute(model);
 			System.out.println("viewUrl="+viewUrl);
       

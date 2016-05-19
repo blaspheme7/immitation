@@ -24,7 +24,6 @@
 <fullyQualifiedTypeName name="controller.MemberUpdateController"/>
 <fullyQualifiedTypeName name="spms.controls.MemberListController"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="spms.bind.ServletRequestDataBinder"/>
 <fullyQualifiedTypeName name="spms.vo.Member"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
@@ -41,4 +40,5 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
 </qualifiedTypeNameHistroy>
