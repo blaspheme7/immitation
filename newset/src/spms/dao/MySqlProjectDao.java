@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -56,25 +56,22 @@ public class MySqlProjectDao implements ProjectDao {
 	  }
 
 	public int insert(Project project) throws Exception {
-		
+		//java.util.date -> java.sql.date
 		Connection connection = null;
 	    PreparedStatement stmt = null;
 
 	    try {
 	      connection = ds.getConnection();
-	      Date sta_date=project.getStartDate();
-	      Date end_date=project.getEndDate();
 	      
 	      
 	      stmt = connection.prepareStatement(
-	          "INSERT INTO PROJECTS (TITLE,CONTENT,STA_DATE,END_DATE,TAGS)"
-	              + " VALUES (?,?,?,?,?)");
+	          "INSERT INTO PROJECTS (PNAME,CONTENT,STA_DATE,END_DATE,STATE,CRE_DATE,TAGS)"
+	              + " VALUES (?,?,?,?,0,NOW(),?)");
 	      stmt.setString(1, project.getTitle());
 	      stmt.setString(2, project.getContent());
-	      stmt.setDate(3, (java.sql.Date)sta_date);
-	      stmt.setDate(4, (java.sql.Date) end_date);
+	      stmt.setDate(3, project.getStartDate());
+	      stmt.setDate(4, project.getEndDate());
 	      stmt.setString(5, project.getTags());
-	      //to_date(?,'yyyy-mm-dd')
 
 	      return stmt.executeUpdate();
 

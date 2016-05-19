@@ -2,6 +2,9 @@ package spms.bind;
 
 import java.lang.reflect.Method;
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Set;
 
 import javax.servlet.ServletRequest;
@@ -18,7 +21,28 @@ public class ServletRequestDataBinder {
 		
 		for(String paramName : paramNames) {
 			m=findSetter(dataType,paramName);
-			System.out.println("DataBinder_dataType="+dataType+",  paramName="+paramName+",  m="+m);
+			System.out.println("dataObject="+dataObject+",  paramName="+paramName+",  createValueObject-- "+m.getParameterTypes()[0]);
+			
+			if(paramName.contains("Date")) {
+				
+				java.util.Date date=null;
+				
+				try {
+					
+					String str_date=request.getParameter(paramName);
+					DateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
+					date=(java.util.Date)formatter.parse(str_date);
+					
+				} catch(ParseException e) {}
+				
+				java.sql.Date sqlDate=new java.sql.Date(date.getTime());
+				
+				if(m!=null) { m.invoke(dataObject, sqlDate); }
+				continue;
+			}
+			
+			//request.getParameter(paramName) == String
+			
 			if(m!=null) { m.invoke(dataObject, createValueObject(m.getParameterTypes()[0],request.getParameter(paramName))); }
 		}
 		return dataObject;
