@@ -21,6 +21,7 @@ public class MemberUpdateController implements Controller, DataBinding {
 	public String execute(Map<String, Object> model) throws Exception {
     
 		Member member=(Member)model.get("member");
+		System.out.println("member.getEmail()= "+member.getEmail());
 		if (member.getEmail() == null) { 
 			Integer no = (Integer)model.get("no");
 			member = memberDao.selectOne(no);
@@ -28,7 +29,6 @@ public class MemberUpdateController implements Controller, DataBinding {
 			return "/member/MemberUpdateForm.jsp";
 
 		} else { 
-			member = (Member)model.get("member");
 			memberDao.update(member);
 			return "redirect:list.do";
 		}

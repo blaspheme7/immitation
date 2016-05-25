@@ -12,11 +12,15 @@
 <p><a href='add.do'>신규 프로젝트</a></p>
 <table border="1">
 	<tr>
-		<th>번호</th><th>제목</th><th>시작일</th><th>종료일</th><th>상태</th></tr>
-	<c:forEach var="project" items="${projects}"></table>
+		<th>번호</th><th>제목</th><th>시작일</th><th>종료일</th><th>상태</th><th></th></tr>
+	<c:forEach var="project" items="${projects}">
 	<tr>
-		<td>${project.no}</td><td><a href='update.do?no=${project.no}'>${project.title}</a></td>
-		<td>${project.startDate}</td><td>${project.endDate}</td><td>${project.state}</td><td><a href='delete.do?no=${project.no}'>삭제</a></td>
+		<td>${project.no}</td>
+		<td><a href='update.do?no=${project.no}'>${project.title}</a></td>
+		<td>${project.startDate}</td>
+		<td>${project.endDate}</td>
+		<td>${project.state}</td>
+		<td><a href='delete.do?no=${project.no}'>삭제</a></td>
 	</tr>
 	</c:forEach>
 	</table>

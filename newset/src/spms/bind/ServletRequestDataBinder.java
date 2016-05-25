@@ -1,10 +1,10 @@
 package spms.bind;
 
 import java.lang.reflect.Method;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.Date;
+//import java.text.DateFormat;
+//import java.text.ParseException;
+//import java.text.SimpleDateFormat;
 import java.util.Set;
 
 import javax.servlet.ServletRequest;
@@ -22,7 +22,7 @@ public class ServletRequestDataBinder {
 		for(String paramName : paramNames) {
 			m=findSetter(dataType,paramName);
 			System.out.println("dataObject="+dataObject+",  paramName="+paramName+",  createValueObject-- "+m.getParameterTypes()[0]);
-			
+			/*
 			if(paramName.contains("Date")) {
 				
 				java.util.Date date=null;
@@ -42,7 +42,7 @@ public class ServletRequestDataBinder {
 			}
 			
 			//request.getParameter(paramName) == String
-			
+			*/
 			if(m!=null) { m.invoke(dataObject, createValueObject(m.getParameterTypes()[0],request.getParameter(paramName))); }
 		}
 		return dataObject;
@@ -60,7 +60,7 @@ public class ServletRequestDataBinder {
 	}
 	
 	private static Object createValueObject(Class<?> type, String value) {
-		
+		System.out.println("type and value = "+type + value);
 		if(type.getName().equals("int") || type==Integer.class) {return new Integer(value);}
 		else if(type.getName().equals("float") || type==Float.class) {return new Float(value);}
 		else if(type.getName().equals("double") || type==Double.class) {return new Double(value);}
