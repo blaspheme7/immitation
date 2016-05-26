@@ -1,21 +1,17 @@
 package spms.listeners;
 
-// 서버에서 제공하는 DataSource 사용하기
-import javax.naming.InitialContext;
+import java.io.InputStream;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import javax.sql.DataSource;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import spms.context.ApplicationContext;
-import spms.controls.LogInController;
-import spms.controls.LogOutController;
-import spms.controls.MemberAddController;
-import spms.controls.MemberDeleteController;
-import spms.controls.MemberListController;
-import spms.controls.MemberUpdateController;
-import spms.dao.MySqlMemberDao;
 
 @WebListener
 public class ContextLoaderListener implements ServletContextListener {
@@ -24,11 +20,22 @@ public class ContextLoaderListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		try {
-			ServletContext sc = event.getServletContext();
 			
+			applicationContext=new ApplicationContext();
+			
+			String resource="spms/dao/mybatis-config.xml";
+			InputStream inputStream=Resources.getResourceAsStream(resource);
+			SqlSessionFactory sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
+			
+			applicationContext.addBean("sqlSessionFactory", sqlSessionFactory);
+			
+			ServletContext sc = event.getServletContext();
 			String propertiesPath=sc.getRealPath(sc.getInitParameter("contextConfigLocation"));
-			applicationContext=new ApplicationContext(propertiesPath);
-			System.out.println("applicationContext="+applicationContext);
+			
+			applicationContext.prepareObjectsByProperties(propertiesPath);
+			applicationContext.prepareObjectsByAnnotation("");
+			applicationContext.injectDependency();
+			
       
 			/*
 			InitialContext initialContext = new InitialContext();

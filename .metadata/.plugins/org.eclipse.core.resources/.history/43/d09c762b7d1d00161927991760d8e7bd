@@ -1,5 +1,0 @@
-jndi.dataSource=java:comp/env/jdbc/basicjsp
-memberDao=spms.dao.MySqlMemberDao
-/member/update.do=spms.controls.MemberUpdateController
-/member/delete.do=spms.controls.MemberDeleteController
-/member/list2.do=spms.controls.MemberListDescController

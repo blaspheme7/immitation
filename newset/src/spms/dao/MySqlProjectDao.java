@@ -137,7 +137,8 @@ public class MySqlProjectDao implements ProjectDao {
 	      try {if (connection != null) connection.close();} catch(Exception e) {}
 	    }
 	    */
-	    	int count=sqlSession.update("spms.dao.ProjectDao.update", project);
+	    	int count=Integer.valueOf(sqlSession.update("spms.dao.ProjectDao.update", project));
+	    	//int count=sqlSession.update("spms.dao.ProjectDao.update", project);
 	    	sqlSession.commit();
 	    	return count;
 	    } finally {
