@@ -45,4 +45,5 @@
 <fullyQualifiedTypeName name="com.google.common.io.Resources"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="spms.bind.DataBinding"/>
 </qualifiedTypeNameHistroy>
