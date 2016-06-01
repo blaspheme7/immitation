@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\201104023장백산\eclipse\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\201104023장백산\eclipse\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\newset" path="/newset" reloadable="false" source="org.eclipse.jst.jee.server:newset"/><Context docBase="D:\201104023장백산\eclipse\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ref" path="/ref" reloadable="false" source="org.eclipse.jst.jee.server:ref"/></Host>
+      <Context docBase="D:\201104023장백산\eclipse\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\201104023장백산\eclipse\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\newset" path="/newset" reloadable="false" source="org.eclipse.jst.jee.server:newset"/><Context docBase="D:\201104023장백산\eclipse\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Board" path="/Board" reloadable="false" source="org.eclipse.jst.jee.server:Board"/></Host>
     </Engine>
   </Service>
 </Server>

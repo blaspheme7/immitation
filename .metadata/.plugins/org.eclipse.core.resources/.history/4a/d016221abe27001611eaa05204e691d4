@@ -1,0 +1,56 @@
+package vo;
+
+import java.util.Date;
+
+public class writing {
+	
+	protected int refnum;
+	protected int no;
+	protected String name;
+	protected String title;
+	protected String content;
+	protected Date cre_date;
+	
+	public int getRefnum() {
+		return refnum;
+	}
+	public writing setRefnum(int refnum) {
+		this.refnum = refnum;
+		return this;
+	}
+	public int getNo() {
+		return no;
+	}
+	public writing setNo(int no) {
+		this.no = no;
+		return this;
+	}
+	public String getName() {
+		return name;
+	}
+	public writing setName(String name) {
+		this.name = name;
+		return this;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public writing setTitle(String title) {
+		this.title = title;
+		return this;
+	}
+	public String getContent() {
+		return content;
+	}
+	public writing setContent(String content) {
+		this.content = content;
+		return this;
+	}
+	public Date getCre_date() {
+		return cre_date;
+	}
+	public writing setCre_date(Date cre_date) {
+		this.cre_date = cre_date;
+		return this;
+	}
+}
