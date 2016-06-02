@@ -1,33 +1,28 @@
 package controls;
 
+import java.util.List;
 import java.util.Map;
 
 import annotation.Component;
-import DataBind.DataBinding;
-import controls.Controller;
-import controls.BoardListController;
-import dao.BoardDao;
+import dao.MySqlBoardDao;
+import vo.Writing;
 
 @Component("/list.do")
-public class BoardListController implements Controller, DataBinding {
+public class BoardListController implements Controller {
 
-	BoardDao boardDao;
+	MySqlBoardDao boardDao;
 	
-	public BoardListController setBoardDao(BoardDao boardDao) {
+	public BoardListController setBoardDao(MySqlBoardDao boardDao) {
 		this.boardDao=boardDao;
 		return this;
 	}
 	
 	@Override
 	public String execute(Map<String,Object> model) throws Exception {
-		model.put("projects", boardDao.selectList());
-		return "/project/ProjectList.jsp";
+		model.put("writings", boardDao.selectList());
+		List<Writing> list=boardDao.selectList();
+		System.out.println(list.size());
+		return "/board/BoardList.jsp";
 	}
 
-	@Override
-	public Object[] getDataBinders() {
-		return new Object[]{
-				"orderCond", String.class
-		};
-	}
 }

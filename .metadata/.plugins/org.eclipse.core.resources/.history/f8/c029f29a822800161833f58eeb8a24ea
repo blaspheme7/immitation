@@ -1,0 +1,25 @@
+package controls;
+
+import java.util.Map;
+
+import annotation.Component;
+import dao.MySqlBoardDao;
+
+@Component("/list.do")
+public class BoardListController implements Controller {
+
+	MySqlBoardDao boardDao;
+	
+	public BoardListController setBoardDao(MySqlBoardDao boardDao) {
+		this.boardDao=boardDao;
+		return this;
+	}
+	
+	@Override
+	public String execute(Map<String,Object> model) throws Exception {
+		model.put("writings", boardDao.selectList());
+		System.out.println("boardDao.selectList() = "+boardDao.selectList());
+		return "/board/BoardList.jsp";
+	}
+
+}

@@ -39,6 +39,7 @@ public class DispatcherServlet extends HttpServlet {
 			System.out.println("servletPath="+servletPath);
 			//Controller pageController = (Controller)sc.getAttribute(servletPath);
 			Controller pageController=(Controller)ctx.getBean(servletPath);
+			System.out.println("pageController="+pageController);
 			if(pageController==null) throw new Exception("요청한 서비스를 찾을 수 없습니다.");
 			
 			if(pageController instanceof DataBinding) {

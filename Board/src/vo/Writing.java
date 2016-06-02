@@ -9,7 +9,7 @@ public class Writing {
 	protected String name;
 	protected String title;
 	protected String content;
-	protected Date cre_date;
+	protected Date createdDate;
 	
 	public int getRefnum() {
 		return refnum;
@@ -46,11 +46,10 @@ public class Writing {
 		this.content = content;
 		return this;
 	}
-	public Date getCre_date() {
-		return cre_date;
+	public Date getCreatedDate() {
+		return createdDate;
 	}
-	public Writing setCre_date(Date cre_date) {
-		this.cre_date = cre_date;
-		return this;
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 }

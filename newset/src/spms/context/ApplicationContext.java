@@ -46,6 +46,7 @@ public class ApplicationContext {
 	
 	public void prepareObjectsByAnnotation(String basePackage) throws Exception {
 	
+		System.out.println("newset.basePackage= "+basePackage);
 		Reflections reflector=new Reflections(basePackage);
 		
 		Set<Class<?>> list=reflector.getTypesAnnotatedWith(Component.class);

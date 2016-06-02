@@ -27,7 +27,6 @@ public class MySqlBoardDao implements BoardDao {
 	}
 	
 	public List<Writing> selectList() throws Exception {
-		
 		SqlSession sqlSession=sqlSessionFactory.openSession();
 			    
 	    try {

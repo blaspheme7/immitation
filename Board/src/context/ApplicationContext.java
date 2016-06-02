@@ -23,6 +23,7 @@ public class ApplicationContext {
 	}
 	
 	public void addBean(String name, Object obj) {
+		System.out.println("add bean name="+name);
 		objTable.put(name, obj);
 	}
 		
@@ -46,6 +47,7 @@ public class ApplicationContext {
 	
 	public void prepareObjectsByAnnotation(String basePackage) throws Exception {
 	
+		System.out.println("prepareObjectsByAnnotation basePackage= "+basePackage);
 		Reflections reflector=new Reflections(basePackage);
 		
 		Set<Class<?>> list=reflector.getTypesAnnotatedWith(Component.class);

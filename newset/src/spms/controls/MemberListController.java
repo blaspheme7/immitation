@@ -19,6 +19,7 @@ public class MemberListController implements Controller {
 	  
 	System.out.println("MemberListController_execute");
     model.put("members", memberDao.selectList());
+    System.out.println("memberDao.selectList() = "+memberDao.selectList());
     
     return "MemberList.jsp";
   }
