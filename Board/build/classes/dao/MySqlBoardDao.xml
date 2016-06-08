@@ -10,9 +10,9 @@
 		<result column="refnum" property="refnum" />
 	</resultMap>
 	
-	<select id="selectList" resultMap="BoardResultMap">
+	<select id="selectList" parameterType="int" resultMap="BoardResultMap">
 		select no, name, title, CRE_DATE, refnum from board
-		order by no desc
+		order by no desc limit #{value},10
 	</select>
 	
 	<insert id="insert" parameterType="writing">
@@ -32,4 +32,12 @@
 	<delete id="delete" parameterType="int">
 		delete from BOARD where NO=#{value}
 	</delete>
+	
+	<update id="refnumUp" parameterType="writing">
+		update BOARD set refnum=#{refnum} where NO=#{no}
+	</update>
+	
+	<select id="dataCount" resultType="int">
+		select count(*) from board
+	</select>
 </mapper>

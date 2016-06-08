@@ -42,6 +42,7 @@ public class DispatcherServlet extends HttpServlet {
 				prepareRequestData(request, model, (DataBinding)pageController);
 			}
 			
+			System.out.println(model);
 			String viewUrl = pageController.execute(model);
       
 			for (String key : model.keySet()) {

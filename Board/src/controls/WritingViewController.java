@@ -5,6 +5,7 @@ import java.util.Map;
 import annotation.Component;
 import DataBind.DataBinding;
 import dao.MySqlBoardDao;
+import vo.Writing;
 
 @Component("/view.go")
 public class WritingViewController implements Controller, DataBinding {
@@ -19,14 +20,20 @@ public class WritingViewController implements Controller, DataBinding {
 	@Override
 	public String execute(Map<String, Object> model) throws Exception {
     
-		Integer no = (Integer)model.get("no");
-		boardDao.selectOne(no);
+		Writing writing;
+		Integer no=(Integer)model.get("no");
+		writing=boardDao.selectOne(no);
+		writing.setRefnum(writing.getRefnum()+1);
+		boardDao.refnumUp(writing);
+		model.put("writing", writing);
+		return "/board/ViewWriting.jsp";
     
-		return "redirect:list.do";
 	}
 
 	@Override
 	public Object[] getDataBinders() {
-		return new Object[]{"no", Integer.class};
+		return new Object[]{"no", Integer.class,
+							"writing", vo.Writing.class
+		};
 	}
 }

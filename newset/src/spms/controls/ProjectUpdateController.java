@@ -19,6 +19,8 @@ public class ProjectUpdateController implements Controller, DataBinding {
 	
 	@Override
 	public String execute(Map<String, Object> model) throws Exception {
+		
+		System.out.println("execute.model "+model);
     
 		Project project=(Project)model.get("project");
 		System.out.println("project.getTitle() ="+project.getTitle());

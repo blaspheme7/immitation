@@ -21,12 +21,15 @@
 	<c:forEach var="writing" items="${writings}">
 	<tr>
 		<td>${writing.no}</td>
-		<td><a href='see.go?no=${writing.no}'>${writing.title}</a></td>
+		<td><a href='view.go?no=${writing.no}'>${writing.title}</a></td>
 		<td>${writing.name}</td>
 		<td>${writing.createdDate}</td>
 		<td>${writing.refnum}</td>
 	</tr>
 	</c:forEach>
+	<tr>
+		<td align="center" colspan=5>1 2 3 4 5 paging</td>
+	</tr>
 	</table><br>
 	<p><a href='write.go'>글 쓰기</a></p><br>
 </body>

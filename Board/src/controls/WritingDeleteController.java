@@ -1,0 +1,32 @@
+package controls;
+
+import java.util.Map;
+
+import DataBind.DataBinding;
+import annotation.Component;
+import dao.MySqlBoardDao;
+
+@Component("/delete.go")
+public class WritingDeleteController implements Controller, DataBinding {
+	
+	MySqlBoardDao boardDao;
+	
+	public WritingDeleteController setMemberDao(MySqlBoardDao boardDao) {
+		this.boardDao=boardDao;
+		return this;
+	}
+	
+	@Override
+	public String execute(Map<String, Object> model) throws Exception {
+    
+		Integer no = (Integer)model.get("no");
+		boardDao.delete(no);
+    
+		return "redirect:list.go";
+	}
+
+	@Override
+	public Object[] getDataBinders() {
+		return new Object[]{"no", Integer.class};
+	}
+}

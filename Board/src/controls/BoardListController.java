@@ -19,9 +19,10 @@ public class BoardListController implements Controller {
 	
 	@Override
 	public String execute(Map<String,Object> model) throws Exception {
-		model.put("writings", boardDao.selectList());
-		List<Writing> list=boardDao.selectList();
-		System.out.println(list.size());
+		if
+		int count=boardDao.dataCount();
+		if(count/10
+		//model.put("writings", boardDao.selectList());
 		return "/board/BoardList.jsp";
 	}
 

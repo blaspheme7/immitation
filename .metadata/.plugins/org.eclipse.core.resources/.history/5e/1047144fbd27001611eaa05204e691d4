@@ -1,5 +1,0 @@
-package controls;
-
-public interface Controller {
-
-}

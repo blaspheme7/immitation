@@ -42,6 +42,8 @@ public class DispatcherServlet extends HttpServlet {
 			System.out.println("pageController="+pageController);
 			if(pageController==null) throw new Exception("요청한 서비스를 찾을 수 없습니다.");
 			
+			System.out.println("dp.45 "+model);
+			
 			if(pageController instanceof DataBinding) {
 		  
 				prepareRequestData(request, model, (DataBinding)pageController);

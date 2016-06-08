@@ -26,11 +26,11 @@ public class MySqlBoardDao implements BoardDao {
 	    this.ds = ds;
 	}
 	
-	public List<Writing> selectList() throws Exception {
+	public List<Writing> selectList(int co) throws Exception {
 		SqlSession sqlSession=sqlSessionFactory.openSession();
 			    
 	    try {
-	    	return sqlSession.selectList("dao.BoardDao.selectList");
+	    	return sqlSession.selectList("dao.BoardDao.selectList",co);
 	    } finally {
 	    	sqlSession.close();
 	    }
@@ -52,7 +52,7 @@ public class MySqlBoardDao implements BoardDao {
 		SqlSession sqlSession=sqlSessionFactory.openSession();
 		
 	    try {
-	    	int count=sqlSession.update("spms.dao.ProjectDao.update", writing);
+	    	int count=sqlSession.update("dao.ProjectDao.update", writing);
 	    	sqlSession.commit();
 	    	return count;
 	    } finally {
@@ -75,12 +75,33 @@ public class MySqlBoardDao implements BoardDao {
 	public int delete(int no) throws Exception {
 		SqlSession sqlSession=sqlSessionFactory.openSession();
 		try {
-			int count=sqlSession.delete("spms.dao.ProjectDao.delete", no);
+			int count=sqlSession.delete("dao.BoardDao.delete", no);
 			sqlSession.commit();
 			return count;
 		} finally {
 			sqlSession.close();
 		}
 	}
-}
 
+	@Override
+	public int refnumUp(Writing writing) throws Exception {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+		try {
+			int count=sqlSession.update("dao.BoardDao.refnumUp",writing);
+			sqlSession.commit();
+			return count;
+		} finally {
+			sqlSession.close();
+		}
+	}
+	
+	public int dataCount() throws Exception {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+			    
+	    try {
+	    	return sqlSession.selectOne("dao.BoardDao.dataCount");
+	    } finally {
+	    	sqlSession.close();
+	    }
+	  }
+}

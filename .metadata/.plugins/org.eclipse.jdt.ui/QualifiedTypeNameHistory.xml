@@ -36,7 +36,6 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="spms.annotation.Component"/>
 <fullyQualifiedTypeName name="java.lang.annotation.RetentionPolicy"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.text.ParseException"/>
@@ -48,4 +47,9 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="context.ApplicationContext"/>
 <fullyQualifiedTypeName name="listener.ContextLoaderListener"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="vo.Writing"/>
+<fullyQualifiedTypeName name="annotation.Component"/>
+<fullyQualifiedTypeName name="DataBind.DataBinding"/>
+<fullyQualifiedTypeName name="dao.MySqlBoardDao"/>
 </qualifiedTypeNameHistroy>
