@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="delete" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="delete"/>
+			<item value="void"/>
+			<item value="select"/>
+			<item value="execute"/>
 			<item value="dataBinders"/>
 			<item value="dataname"/>
 			<item value="model"/>
-			<item value="execute"/>
 			<item value="annotation"/>
-			<item value="Project"/>
-			<item value="update"/>
-			<item value="select"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Comment"/>
 			<item value="Board"/>
 			<item value="Project"/>
 		</list>

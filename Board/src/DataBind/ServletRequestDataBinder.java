@@ -36,7 +36,10 @@ public class ServletRequestDataBinder {
 	
 	private static Object createValueObject(Class<?> type, String value) {
 		System.out.println("type and value = "+type + value);
-		if(type.getName().equals("int") || type==Integer.class) {return new Integer(value);}
+		if(type.getName().equals("int") || type==Integer.class) {
+			if(value==null) return null;
+			else return new Integer(value);
+		}
 		else if(type.getName().equals("float") || type==Float.class) {return new Float(value);}
 		else if(type.getName().equals("double") || type==Double.class) {return new Double(value);}
 		else if(type.getName().equals("long") || type==Long.class) {return new Long(value);}

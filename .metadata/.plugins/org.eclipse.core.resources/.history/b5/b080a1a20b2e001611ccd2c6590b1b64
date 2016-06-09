@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CommentView</title>
+</head>
+<body>
+	<table border="1">
+	<c:forEach var="comment" items="${comments}">
+	<tr>
+		<th>댓글번호</th>
+		<th>작성자</th>
+		<th>댓글</th>
+		<th>작성일</th>
+	</tr>
+		
+	<c:forEach var="writing" items="${writings}">
+	<tr>
+		<td align="center" width="80px">${writing.no}</td>
+		<td width="250px"><a href='view.go?no=${writing.no}'>${writing.title}</a></td>
+		<td width="100px">${writing.name}</td>
+		<td align="center" width="100px">${writing.createdDate}</td>
+		<td width="100px">${writing.refnum}</td>
+	</tr>
+	</c:forEach>
+</body>
+</html>

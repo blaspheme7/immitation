@@ -20,15 +20,24 @@
 		
 	<c:forEach var="writing" items="${writings}">
 	<tr>
-		<td>${writing.no}</td>
-		<td><a href='view.go?no=${writing.no}'>${writing.title}</a></td>
-		<td>${writing.name}</td>
-		<td>${writing.createdDate}</td>
-		<td>${writing.refnum}</td>
+		<td align="center" width="80px">${writing.no}</td>
+		<td width="250px"><a href='view.go?no=${writing.no}'>${writing.title}</a></td>
+		<td width="100px">${writing.name}</td>
+		<td align="center" width="100px">${writing.createdDate}</td>
+		<td width="100px">${writing.refnum}</td>
 	</tr>
 	</c:forEach>
 	<tr>
-		<td align="center" colspan=5>1 2 3 4 5 paging</td>
+		<td align="center" colspan=5>
+			<c:forEach var="i" begin="1" end="${maxPage}">
+				<c:choose>
+					<c:when test="${currentPage==i}"> [${i}] </c:when>
+					<c:otherwise>
+						<a href="list.go?currentPage=${i}"> [${i}] </a>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+		</td>
 	</tr>
 	</table><br>
 	<p><a href='write.go'>글 쓰기</a></p><br>

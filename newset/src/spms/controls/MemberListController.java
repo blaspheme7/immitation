@@ -17,9 +17,7 @@ public class MemberListController implements Controller {
 	@Override
 	public String execute(Map<String, Object> model) throws Exception {
 	  
-	System.out.println("MemberListController_execute");
     model.put("members", memberDao.selectList());
-    System.out.println("memberDao.selectList() = "+memberDao.selectList());
     
     return "MemberList.jsp";
   }

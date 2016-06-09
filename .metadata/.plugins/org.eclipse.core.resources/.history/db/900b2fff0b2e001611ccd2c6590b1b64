@@ -1,0 +1,29 @@
+package controls;
+
+import java.util.Map;
+
+import DataBind.DataBinding;
+import dao.MySqlBoardDao;
+
+public class CommentPrintController implements Controller, DataBinding {
+
+	MySqlBoardDao boardDao;
+	
+	public CommentPrintController setBoardDao(MySqlBoardDao boardDao) {
+		this.boardDao=boardDao;
+		return this;
+	}
+	
+	@Override
+	public String execute(Map<String,Object> model) throws Exception {
+		Integer wno = (Integer)model.get("wno");
+		boardDao.
+		
+		return "/board/BoardList.jsp";
+	}
+
+	@Override
+	public Object[] getDataBinders() {
+		return new Object[]{"currentPage", Integer.class};
+	}
+}

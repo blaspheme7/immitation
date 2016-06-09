@@ -44,12 +44,14 @@
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
 <fullyQualifiedTypeName name="spms.bind.DataBinding"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="context.ApplicationContext"/>
 <fullyQualifiedTypeName name="listener.ContextLoaderListener"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="vo.Writing"/>
-<fullyQualifiedTypeName name="annotation.Component"/>
-<fullyQualifiedTypeName name="DataBind.DataBinding"/>
 <fullyQualifiedTypeName name="dao.MySqlBoardDao"/>
+<fullyQualifiedTypeName name="DataBind.DataBinding"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="vo.Comment"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="annotation.Component"/>
+<fullyQualifiedTypeName name="dao.MySqlCommentDao"/>
 </qualifiedTypeNameHistroy>

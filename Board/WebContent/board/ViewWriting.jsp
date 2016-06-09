@@ -10,13 +10,18 @@
 
 <table border="1">
 	<tr>
-		<th>글번호</th><td>${writing.no}</td><th>작성자</th><td>${writing.name}</td><th>작성일</th><td>${writing.createdDate}</td>
+		<th width="60px">글번호</th><td align="center" width="40px">${writing.no}</td><th width="60px">작성자</th><td align="center">${writing.name}</td><th>작성일</th><td align="center" width="90px">${writing.createdDate}</td>
 	</tr>
 	<tr>
-		<th>제목</th><td colspan=3>${writing.title}</td><th>조회수</th><td>${writing.refnum}</td>
+		<th>제목</th><td colspan=3 width="200px">${writing.title}</td><th>조회수</th><td>${writing.refnum}</td>
 	</tr>
 	<tr>
-		<td colspan=6 height="100px">${writing.content}</td>
+		<td colspan=6 height="200px">${writing.content}</td>
+	</tr>
+	<tr>
+		<jsp:include page="CommentView.jsp">
+			<jsp:param name="wno" value="${writing.no}"/>
+		</jsp:include>
 	</tr>
 	</table><br>
 	<input type='button' value='수정' onclick='location.href="modify.go?no=${writing.no}"'>

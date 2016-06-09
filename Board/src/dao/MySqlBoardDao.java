@@ -52,7 +52,7 @@ public class MySqlBoardDao implements BoardDao {
 		SqlSession sqlSession=sqlSessionFactory.openSession();
 		
 	    try {
-	    	int count=sqlSession.update("dao.ProjectDao.update", writing);
+	    	int count=sqlSession.update("dao.BoardDao.update", writing);
 	    	sqlSession.commit();
 	    	return count;
 	    } finally {

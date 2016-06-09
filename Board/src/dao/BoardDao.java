@@ -12,6 +12,7 @@ public interface BoardDao {
 	Writing selectOne(int no) throws Exception;
 	int refnumUp(Writing writing) throws Exception;
 	int dataCount() throws Exception;
+	int delete(int no) throws Exception;
 
 }
 

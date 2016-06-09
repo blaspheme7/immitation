@@ -1,2 +1,0 @@
-jndi.dataSource=java:comp/env/jdbc/basicjsp
-boardDao=dao.MySqlBoardDao

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CommentDao">
+	<resultMap type="comment" id="CommentResultMap">
+		<id column="cno" property="cno" />
+		<result column="wno" property="wno" />
+		<result column="content" property="content" />
+		<result column="cre_date" property="cre_date" javaType="java.sql.Date" />
+		<result column="writer" property="writer" />
+		<result column="password" property="password" />
+	</resultMap>
+	
+	<select id="selectList" parameterType="int" resultMap="CommentResultMap">
+		select cno, writer, content, cre_date from comment
+		where wno=${value} 
+		order by cno desc
+	</select>
+	
+	<insert id="insert" parameterType="writing">
+		insert into comment(writer, password, cre_date, wno, content)
+					values(#{writer}, #{password}, now(), #{wno}, #{content})
+	</insert>
+	
+	<update id="update" parameterType="writing">
+		update BOARD title=#{title}, CONTENT=#{content} where NO=#{no}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from BOARD where NO=#{value}
+	</delete>
+	
+</mapper>

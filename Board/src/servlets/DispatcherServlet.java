@@ -54,6 +54,8 @@ public class DispatcherServlet extends HttpServlet {
 				return;
 			} else {
 				rd = request.getRequestDispatcher(viewUrl);
+				System.out.println("model.get(maxPage)="+model.get("maxPage"));
+				
 				rd.include(request, response);
 				rd=request.getRequestDispatcher("/Tail.jsp");
 				//rd.include(request, response);
