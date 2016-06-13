@@ -19,6 +19,8 @@ label {
 
 <form action='modify.go' method='post'>
 <ul>
+	<li><label for="no">글번호</label>
+		<input id="no" type='text' name='no' size="2" value='${writing.no}' readonly></li>
 	<li><label for="title">제목</label>
 		<input id="title" type='text' name='title' size="50" value='${writing.title}'></li>
 	<li><label for="name">작성자명</label>
@@ -26,7 +28,7 @@ label {
 	<li><label for="content">내용</label>
 		<textarea id="content" name='content' rows="20" cols="40">${writing.content}</textarea></li>
 </ul>
-	<input type='submit' value='추가'>
+	<input type='submit' value='변경'>
 	<input type='button' value='취소' onclick='location.href="list.go"'>
 </form>
 

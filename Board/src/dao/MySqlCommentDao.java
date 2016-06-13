@@ -73,4 +73,15 @@ SqlSessionFactory sqlSessionFactory;
 	    	sqlSession.close();
 	    }
 	}
+	
+	@Override
+	public int countComment(int wno) throws Exception {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+	    
+	    try {
+	    	return sqlSession.selectOne("dao.BoardDao.countComment");
+	    } finally {
+	    	sqlSession.close();
+	    }
+	}
 }

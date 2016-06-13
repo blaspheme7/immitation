@@ -1,19 +1,28 @@
 package controls;
 
+import java.util.ArrayList;
 import java.util.Map;
 
-import annotation.Component;
 import DataBind.DataBinding;
+import annotation.Component;
 import dao.MySqlBoardDao;
+import dao.MySqlCommentDao;
+import vo.Comment;
 import vo.Writing;
 
 @Component("/view.go")
 public class WritingViewController implements Controller, DataBinding {
 	
 	MySqlBoardDao boardDao;
+	MySqlCommentDao commentDao;
 	
 	public WritingViewController setWritingDao(MySqlBoardDao boardDao) {
 		this.boardDao=boardDao;
+		return this;
+	}
+	
+	public WritingViewController setCommentDao(MySqlCommentDao commentDao) {
+		this.commentDao=commentDao;
 		return this;
 	}
 	
@@ -26,6 +35,7 @@ public class WritingViewController implements Controller, DataBinding {
 		writing.setRefnum(writing.getRefnum()+1);
 		boardDao.refnumUp(writing);
 		model.put("writing", writing);
+		model.put("comments",commentDao.selectList(no));
 		return "/board/ViewWriting.jsp";
     
 	}

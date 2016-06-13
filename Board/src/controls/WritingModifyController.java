@@ -29,7 +29,7 @@ public class WritingModifyController implements Controller, DataBinding {
 
 		} else { 
 			boardDao.update(writing);
-			return "redirect:list.do";
+			return "redirect:list.go";
 		}
 	}
 

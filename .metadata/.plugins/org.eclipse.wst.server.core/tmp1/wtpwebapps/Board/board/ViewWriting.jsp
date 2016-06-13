@@ -1,4 +1,5 @@
 <%@ page language="java"  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,14 +20,20 @@
 		<td colspan=6 height="200px">${writing.content}</td>
 	</tr>
 	<tr>
-		<jsp:include page="CommentView.jsp">
-			<jsp:param name="wno" value="${writing.no}"/>
-		</jsp:include>
+		<td colspan=6>
+			<%@include file="/board/CommentView.jsp" %>
+		</td>
 	</tr>
-	</table><br>
+	<tr>
+		<td colspan=6>
+			댓글작성하기<br>
+			<%@include file="/board/CommentWriting.jsp" %>
+		</td>
+	</tr>
+</table><br>
+	
 	<input type='button' value='수정' onclick='location.href="modify.go?no=${writing.no}"'>
 	<input type='button' value='삭제' onclick='location.href="delete.go?no=${writing.no}"' >
 	<input type='button' value='뒤로가기' onclick='location.href="list.go"'>
-</form>
 </body>
 </html>

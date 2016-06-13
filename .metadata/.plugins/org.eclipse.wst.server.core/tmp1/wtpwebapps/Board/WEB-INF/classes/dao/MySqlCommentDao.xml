@@ -29,4 +29,8 @@
 		delete from comment where cno=#{cno}, password=#{password}"
 	</delete>
 	
+	<select id="countComment" parameterType="int" resultType="int">
+		select count(*) from comment where wno=#{value}
+	</select>
+	
 </mapper>

@@ -50,8 +50,9 @@
 <fullyQualifiedTypeName name="dao.MySqlBoardDao"/>
 <fullyQualifiedTypeName name="DataBind.DataBinding"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="vo.Comment"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="annotation.Component"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="dao.MySqlCommentDao"/>
+<fullyQualifiedTypeName name="vo.Comment"/>
 </qualifiedTypeNameHistroy>

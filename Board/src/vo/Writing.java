@@ -10,7 +10,15 @@ public class Writing {
 	protected String title;
 	protected String content;
 	protected Date createdDate;
+	public int commentCount=0;
 	
+	public int getCommentCount() {
+		return commentCount;
+	}
+	public Writing setCommentCount(int commentCount) {
+		this.commentCount = commentCount;
+		return this;
+	}
 	public int getRefnum() {
 		return refnum;
 	}
